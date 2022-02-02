@@ -47,3 +47,28 @@ for digit in str(number):
     sumOfDigits += int(digit)
 
 print("The sum of digits is: ", sumOfDigits)
+
+## ----  11th challenge --- ##
+
+import datetime as dt
+from calendar import monthrange
+
+date = dt.datetime(1995, 9, 19)
+
+currentDate = dt.datetime.now()
+print(currentDate)
+
+calcDate = currentDate - date
+days = calcDate.days
+seconds = calcDate.seconds
+minutes = (seconds % 3600) // 60
+seconds = seconds % 60
+
+daysOfGivenMonth = monthrange(date.year,date.month)
+
+dateFormat = currentDate.strftime("%d/%m/%Y")
+
+print('{0} days, {1} minutes and {2} seconds have passed since {3}'
+      .format(days, minutes, seconds,dateFormat))
+
+print("That month had " + str(daysOfGivenMonth[1]) + " days")
